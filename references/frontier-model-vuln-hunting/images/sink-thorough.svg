@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-90 0 810 1120" width="810" height="1120" font-family="&#39;Source Sans 3&#39;, &#39;Segoe UI&#39;, sans-serif">
+  <defs>
+    <marker id="arrow1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#0E7C72"></path>
+    </marker>
+    <linearGradient id="nodeGrad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0E7C72"></stop>
+      <stop offset="100%" stop-color="#19A873"></stop>
+    </linearGradient>
+    <filter id="shadow1" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A1A18" flood-opacity="0.08"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="32" text-anchor="middle" font-family="&#39;DM Serif Display&#39;, Georgia, serif" font-size="22" fill="#1A1A18">sink-thorough</text>
+  <text x="360" y="52" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="10" fill="#6B6B62" letter-spacing="0.1em">16 STEPS · PIPELINE</text>
+
+  <!-- Phase 1: Discovery (parallel) -->
+  <rect x="120" y="75" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="120" y="75" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="220" y="97" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">sink_scan</text>
+  <text x="220" y="115" text-anchor="middle" font-size="10" fill="#6B6B62">Conservative scan, all files</text>
+
+  <rect x="400" y="75" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="400" y="75" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="500" y="97" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">sink_scan_aggressive</text>
+  <text x="500" y="115" text-anchor="middle" font-size="10" fill="#6B6B62">Paranoid scan + noise reduction</text>
+
+  <text x="60" y="104" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">DISCOVERY</text>
+
+  <!-- Arrows to merge -->
+  <line x1="220" y1="127" x2="220" y2="148" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="220" y1="148" x2="360" y2="165" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <line x1="500" y1="127" x2="500" y2="148" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="500" y1="148" x2="360" y2="165" stroke="#0E7C72" stroke-width="1.5"></line>
+
+  <!-- merge_sinks -->
+  <rect x="260" y="168" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="168" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="190" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">merge_sinks</text>
+  <text x="360" y="208" text-anchor="middle" font-size="10" fill="#6B6B62">Dedup + confidence scoring</text>
+
+  <!-- gapfill -->
+  <line x1="360" y1="220" x2="360" y2="248" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="251" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="251" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="273" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">gapfill</text>
+  <text x="360" y="291" text-anchor="middle" font-size="10" fill="#6B6B62">Coverage check + rescan gaps</text>
+  <text x="60" y="278" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">COVERAGE</text>
+
+  <!-- context_window -->
+  <line x1="360" y1="303" x2="360" y2="331" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="334" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="334" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="356" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">context_window</text>
+  <text x="360" y="374" text-anchor="middle" font-size="10" fill="#6B6B62">±5 line context, kill ORM/test noise</text>
+  <text x="60" y="361" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">ANALYSIS</text>
+
+  <!-- data_flow_trace -->
+  <line x1="360" y1="386" x2="360" y2="414" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="417" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="417" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="439" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">data_flow_trace</text>
+  <text x="360" y="457" text-anchor="middle" font-size="10" fill="#6B6B62">Backward + forward taint trace</text>
+
+  <!-- trust_boundary_check -->
+  <line x1="360" y1="469" x2="360" y2="497" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="500" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="500" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="522" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">trust_boundary_check</text>
+  <text x="360" y="540" text-anchor="middle" font-size="10" fill="#6B6B62">Internal vs exposed, service map</text>
+  <text x="60" y="527" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">BOUNDARY</text>
+
+  <!-- revalidation_split -->
+  <line x1="360" y1="552" x2="360" y2="580" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="583" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="583" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="605" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">revalidation_split</text>
+  <text x="360" y="623" text-anchor="middle" font-size="10" fill="#6B6B62">Split findings into 4 chunks</text>
+  <text x="60" y="610" text-anchor="end" font-size="10" font-weight="700" fill="#C4782A" letter-spacing="0.05em">VALIDATION</text>
+
+  <!-- Fan-out to 4 chunks -->
+  <line x1="360" y1="635" x2="360" y2="656" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="115" y1="656" x2="605" y2="656" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="115" y1="656" x2="115" y2="676" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <line x1="278" y1="656" x2="278" y2="676" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <line x1="442" y1="656" x2="442" y2="676" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <line x1="605" y1="656" x2="605" y2="676" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- 4 chunks -->
+  <rect x="40" y="679" width="150" height="56" rx="8" fill="#FBF1E4" stroke="#C4782A" filter="url(#shadow1)"></rect>
+  <text x="115" y="700" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A18">chunk_1</text>
+  <text x="115" y="716" text-anchor="middle" font-size="9" fill="#6B6B62">Adversarial revalidation</text>
+  <text x="115" y="729" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#C4782A">↻ ×5</text>
+
+  <rect x="203" y="679" width="150" height="56" rx="8" fill="#FBF1E4" stroke="#C4782A" filter="url(#shadow1)"></rect>
+  <text x="278" y="700" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A18">chunk_2</text>
+  <text x="278" y="716" text-anchor="middle" font-size="9" fill="#6B6B62">Adversarial revalidation</text>
+  <text x="278" y="729" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#C4782A">↻ ×5</text>
+
+  <rect x="367" y="679" width="150" height="56" rx="8" fill="#FBF1E4" stroke="#C4782A" filter="url(#shadow1)"></rect>
+  <text x="442" y="700" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A18">chunk_3</text>
+  <text x="442" y="716" text-anchor="middle" font-size="9" fill="#6B6B62">Adversarial revalidation</text>
+  <text x="442" y="729" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#C4782A">↻ ×5</text>
+
+  <rect x="530" y="679" width="150" height="56" rx="8" fill="#FBF1E4" stroke="#C4782A" filter="url(#shadow1)"></rect>
+  <text x="605" y="700" text-anchor="middle" font-size="11" font-weight="600" fill="#1A1A18">chunk_4</text>
+  <text x="605" y="716" text-anchor="middle" font-size="9" fill="#6B6B62">Adversarial revalidation</text>
+  <text x="605" y="729" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#C4782A">↻ ×5</text>
+
+  <!-- Fan-in to merge -->
+  <line x1="115" y1="735" x2="115" y2="758" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="278" y1="735" x2="278" y2="758" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="442" y1="735" x2="442" y2="758" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="605" y1="735" x2="605" y2="758" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="115" y1="758" x2="605" y2="758" stroke="#0E7C72" stroke-width="1.5"></line>
+  <line x1="360" y1="758" x2="360" y2="778" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- revalidation_merge -->
+  <rect x="260" y="781" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="781" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="803" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">revalidation_merge</text>
+  <text x="360" y="821" text-anchor="middle" font-size="10" fill="#6B6B62">Combine chunk verdicts</text>
+
+  <!-- feedback_loop -->
+  <line x1="360" y1="833" x2="360" y2="861" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="864" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="864" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="886" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">feedback_loop</text>
+  <text x="360" y="904" text-anchor="middle" font-size="10" fill="#6B6B62">Sibling pattern discovery</text>
+  <text x="60" y="891" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">FEEDBACK</text>
+
+  <!-- sibling_validation -->
+  <line x1="360" y1="916" x2="360" y2="944" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <rect x="260" y="947" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="947" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="969" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">sibling_validation</text>
+  <text x="360" y="987" text-anchor="middle" font-size="10" fill="#6B6B62">Validate sibling findings</text>
+
+  <!-- consolidation (depends on revalidation_merge + sibling_validation) -->
+  <!-- Dotted arc: join dependency from revalidation_merge -->
+  <line x1="460" y1="807" x2="560" y2="807" stroke="#0E7C72" stroke-width="1.5" stroke-dasharray="4,3"></line>
+  <line x1="560" y1="807" x2="560" y2="1025" stroke="#0E7C72" stroke-width="1.5" stroke-dasharray="4,3"></line>
+  <line x1="560" y1="1025" x2="462" y2="1025" stroke="#0E7C72" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow1)"></line>
+  <!-- Annotation on dotted arc -->
+  <text x="572" y="920" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#6B6B62">join: consolidation</text>
+  <text x="572" y="933" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#6B6B62">waits for both</text>
+  <text x="572" y="946" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#6B6B62">revalidation_merge</text>
+  <text x="572" y="959" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#6B6B62">+ sibling_validation</text>
+
+  <line x1="360" y1="999" x2="360" y2="1018" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <rect x="260" y="1021" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="1021" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="1043" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">consolidation</text>
+  <text x="360" y="1061" text-anchor="middle" font-size="10" fill="#6B6B62">Root-cause dedup + severity + JSON</text>
+  <text x="60" y="1048" text-anchor="end" font-size="10" font-weight="700" fill="#B04040" letter-spacing="0.05em">OUTPUT</text>
+
+  <!-- Legend -->
+  <line x1="-60" y1="1095" x2="-30" y2="1095" stroke="#0E7C72" stroke-width="1.5"></line>
+  <text x="-20" y="1099" font-size="10" fill="#6B6B62">Direct dependency</text>
+
+  <line x1="150" y1="1095" x2="180" y2="1095" stroke="#0E7C72" stroke-width="1.5" stroke-dasharray="4,3"></line>
+  <text x="190" y="1099" font-size="10" fill="#6B6B62">Join dependency (step waits for multiple inputs)</text>
+
+</svg>

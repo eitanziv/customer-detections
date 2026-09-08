@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-90 0 810 920" width="810" height="920" font-family="&#39;Source Sans 3&#39;, &#39;Segoe UI&#39;, sans-serif">
+  <defs>
+    <marker id="arrow1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#0E7C72"></path>
+    </marker>
+    <marker id="arrow-rose" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#B04040"></path>
+    </marker>
+    <linearGradient id="nodeGrad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0E7C72"></stop>
+      <stop offset="100%" stop-color="#19A873"></stop>
+    </linearGradient>
+    <filter id="shadow1" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A1A18" flood-opacity="0.08"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="32" text-anchor="middle" font-family="&#39;DM Serif Display&#39;, Georgia, serif" font-size="22" fill="#1A1A18">madara-scorecard</text>
+  <text x="360" y="52" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="10" fill="#6B6B62" letter-spacing="0.1em">8 STEPS · FEEDBACK LOOP · WEIGHTED GATE SCORECARD</text>
+
+  <!-- Step 1: recon -->
+  <rect x="260" y="75" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="75" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="97" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">recon</text>
+  <text x="360" y="115" text-anchor="middle" font-size="10" fill="#6B6B62">Threat model + hunt rules</text>
+  <text x="60" y="104" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">RECON</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="127" x2="360" y2="155" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 2: hunt ⚡ -->
+  <rect x="260" y="158" width="200" height="52" rx="8" fill="#E0F5F3" stroke="#0E7C72" filter="url(#shadow1)"></rect>
+  <rect x="260" y="158" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="350" y="180" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">hunt ⚡</text>
+  <text x="360" y="198" text-anchor="middle" font-size="10" fill="#0D6349">Vulnerability discovery across audit units</text>
+  <text x="60" y="187" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">HUNT</text>
+
+  <line x1="360" y1="210" x2="360" y2="238" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 3: validate -->
+  <rect x="260" y="241" width="200" height="52" rx="8" fill="#FBF1E4" stroke="#C4782A" filter="url(#shadow1)"></rect>
+  <text x="360" y="263" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">validate</text>
+  <text x="360" y="281" text-anchor="middle" font-size="10" fill="#C4782A">Weighted scorecard: tier 1-4 scoring</text>
+  <text x="60" y="270" text-anchor="end" font-size="10" font-weight="700" fill="#C4782A" letter-spacing="0.05em">VALIDATE</text>
+
+  <line x1="360" y1="293" x2="360" y2="321" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 4: trace -->
+  <rect x="260" y="324" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="324" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="346" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">trace</text>
+  <text x="360" y="364" text-anchor="middle" font-size="10" fill="#6B6B62">Reachability: reachable / guarded / partial</text>
+  <text x="60" y="353" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">TRACE</text>
+
+  <line x1="360" y1="376" x2="360" y2="404" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 5: gapfill (routing step) -->
+  <rect x="260" y="407" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="407" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="429" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">gapfill</text>
+  <text x="360" y="447" text-anchor="middle" font-size="10" fill="#6B6B62">Coverage gap analysis + routing</text>
+  <text x="60" y="436" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">GAPFILL</text>
+
+  <!-- Loop-back arrow from gapfill → hunt -->
+  <path d="M460,433 L530,433 Q538,433 538,425 L538,184 Q538,176 530,176 L462,176" stroke="#B04040" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-rose)"></path>
+  <text x="548" y="290" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#B04040">needs_rehunt</text>
+  <text x="548" y="303" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#B04040">= true</text>
+  <text x="548" y="320" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="8" fill="#6B6B62">max 3 loops</text>
+
+  <!-- Default path from gapfill → feedback -->
+  <line x1="360" y1="459" x2="360" y2="487" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+  <text x="372" y="478" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="8" fill="#6B6B62">converged</text>
+
+  <!-- Step 6: feedback -->
+  <rect x="260" y="490" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="490" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="512" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">feedback</text>
+  <text x="360" y="530" text-anchor="middle" font-size="10" fill="#6B6B62">Cross-repo sibling patterns</text>
+  <text x="60" y="519" text-anchor="end" font-size="10" font-weight="700" fill="#0E7C72" letter-spacing="0.05em">FEEDBACK</text>
+
+  <line x1="360" y1="542" x2="360" y2="570" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 7: post_pipeline -->
+  <rect x="260" y="573" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="573" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="595" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">post_pipeline</text>
+  <text x="360" y="613" text-anchor="middle" font-size="10" fill="#6B6B62">Final consolidation + severity + JSON</text>
+  <text x="60" y="602" text-anchor="end" font-size="10" font-weight="700" fill="#B04040" letter-spacing="0.05em">OUTPUT</text>
+
+  <line x1="360" y1="625" x2="360" y2="653" stroke="#0E7C72" stroke-width="1.5" marker-end="url(#arrow1)"></line>
+
+  <!-- Step 8: pattern_hunt -->
+  <rect x="260" y="656" width="200" height="52" rx="8" fill="#fff" stroke="#D4CBBA" filter="url(#shadow1)"></rect>
+  <rect x="260" y="656" width="200" height="3" rx="8" fill="url(#nodeGrad1)"></rect>
+  <text x="360" y="678" text-anchor="middle" font-size="12" font-weight="600" fill="#1A1A18">pattern_hunt</text>
+  <text x="360" y="696" text-anchor="middle" font-size="10" fill="#6B6B62">Systemic pattern discovery</text>
+
+  <!-- Legend -->
+  <line x1="-60" y1="760" x2="-30" y2="760" stroke="#0E7C72" stroke-width="1.5"></line>
+  <text x="-20" y="764" font-size="10" fill="#6B6B62">Direct dependency</text>
+
+  <line x1="150" y1="760" x2="180" y2="760" stroke="#B04040" stroke-width="1.5" stroke-dasharray="5,3"></line>
+  <text x="190" y="764" font-size="10" fill="#6B6B62">Conditional loop-back (rehunt on coverage gaps)</text>
+
+  <rect x="-62" y="780" width="14" height="14" rx="3" fill="#E0F5F3" stroke="#0E7C72"></rect>
+  <text x="-20" y="792" font-size="10" fill="#6B6B62">Signal-enabled step (⚡ allows runtime routing override)</text>
+
+  <rect x="-62" y="804" width="14" height="14" rx="3" fill="#FBF1E4" stroke="#C4782A"></rect>
+  <text x="-20" y="816" font-size="10" fill="#6B6B62">Scorecard validation (weighted tier model vs binary gates)</text>
+
+</svg>
