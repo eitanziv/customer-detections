@@ -14,6 +14,7 @@ Okta Identity Defense Operations is a team of security practitioners that help O
 | `detections/`            | List of YAML files for recommended security detections Okta customers can implement within their security monitoring system. |
 | `hunts/`                 | Threat hunting queries useful for aiding in detection use case creation                                                      |
 | `logs/`                  | CSV file with descriptions and examples of log fields within the Okta system log                                             |
+| `references/`            | Supplementary materials (diagrams, research references)
 | `workflows/`             | Okta Workflows templates for security incident response and proactive threat mitigation                                      |
 | `sample_osquery_checks/` | Okta osquery check templates for using in Okta's Advanced Posture Checks                                                     |
 
