@@ -10,7 +10,7 @@ Reading and following these guidelines will help us make the contribution proces
     * [Opening Issues](#opening-issues)
     * [Submitting Pull Requests](#submitting-pull-requests)
 * [Getting in Touch](#getting-in-touch)
-    * [Got a question or problem?](#got-a-question-or-problem?)
+    * [Have a question or problem?](#have-a-question-or-problem)
     * [Vulnerability Reporting](#vulnerability-reporting)
 
 ## Code of Conduct
